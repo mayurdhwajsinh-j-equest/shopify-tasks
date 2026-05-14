@@ -43,7 +43,7 @@
   padding: 4px;
   position: absolute;
   left: 40.5px;
-  top: 115px;
+  top: 125px;
   transform: rotate(-10deg);
   display: inline-block;
 }
@@ -56,4 +56,50 @@
 .hero-banner__image img {
   max-width: 416px;
   mix-blend-mode: multiply;
+}
+
+@media (max-width: 768px) {
+
+  .hero-banner {
+    flex-direction: column;
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .hero-banner--reverse {
+    flex-direction: column-reverse;
+  }
+
+  .hero-banner__image img {
+    max-width: 100%;
+  }
+
+  .hero-banner__content {
+    text-align: center;
+    width: 100%;
+    position: relative;    
+    padding-top: 40px;       
+  }
+
+  .hero-heading {
+    font-size: 36px;
+  }
+
+  .hero-offer {
+    position: absolute;
+    left: 60px;
+    top: 45px;
+    transform: translateX(-50%) rotate(-10deg);
+    font-size: 10px;
+    padding: 1px 2px;
+    white-space: nowrap;    
+  }
+
+  .hero-banner--reverse .hero-offer {
+    left: 60px;
+    right: auto;
+    top: 45px;
+    transform: translateX(-50%) rotate(-10deg);
+  }
+
 }
