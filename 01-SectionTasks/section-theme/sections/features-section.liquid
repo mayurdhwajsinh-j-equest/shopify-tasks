@@ -1,0 +1,96 @@
+<section class="features-section">
+
+  <div class="page-width">
+
+    {% if section.settings.heading != blank %}
+      <h2>
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+
+    <div class="features-grid">
+
+      {% for block in section.blocks %}
+
+        <div class="feature-card" {{ block.shopify_attributes }}>
+
+          {% if block.settings.image != blank %}
+            {{ block.settings.image
+ | image_url: width: 300
+ | image_tag
+            }}
+          {% endif %}
+
+          {% if block.settings.title != blank %}
+            <h3>
+              {{ block.settings.title }}
+            </h3>
+          {% endif %}
+
+          {% if block.settings.description != blank %}
+            <div>
+              {{ block.settings.description }}
+            </div>
+          {% endif %}
+
+        </div>
+
+      {% endfor %}
+
+    </div>
+
+  </div>
+
+</section>
+
+{% schema %}
+  {
+    "name": "Features Section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "Section Heading",
+        "default": "Our Features"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "feature",
+        "name": "Feature Card",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Feature Image"
+          }, {
+            "type": "text",
+            "id": "title",
+            "label": "Feature Title",
+            "default": "Feature Title"
+          }, {
+            "type": "richtext",
+            "id": "description",
+            "label": "Feature Description",
+            "default": "<p>Feature description goes here.</p>"
+          }
+        ]
+      }
+    ],
+    "max_blocks": 6,
+    "presets": [
+      {
+        "name": "Features Section",
+        "blocks": [
+          {
+            "type": "feature"
+          }, {
+            "type": "feature"
+          }, {
+            "type": "feature"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

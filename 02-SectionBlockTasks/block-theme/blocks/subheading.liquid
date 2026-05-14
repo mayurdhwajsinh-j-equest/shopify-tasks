@@ -1,0 +1,17 @@
+<p class="main-subheading" {{ block.shopify_attributes }}>
+  {{ block.settings.subheading }}
+</p>
+
+{% schema %}
+{
+  "name": "Subheading",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "OVER 300,000+ HAPPY CUSTOMERS"
+    }
+  ]
+}
+{% endschema %}

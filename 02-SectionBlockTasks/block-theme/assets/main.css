@@ -1,0 +1,59 @@
+@font-face {
+  font-family: "Mona Sans Expanded";
+  src: url('{{ "MonaSansExpanded-Regular.woff2" | asset_url }}') format("woff2");
+}
+
+.main-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 100px;
+  background: #fef9fa;
+  position: relative;
+}
+
+.main-banner--reverse {
+  flex-direction: row-reverse;
+}
+
+.main-banner__content {
+  max-width: 1280px;
+  /* position: relative; */
+}
+
+.main-heading {
+  font-size: 44px;
+  font-weight: bolder;
+  color: #e8656b;
+  max-width: 262px;
+}
+
+.main-subheading {
+  margin-top: 20px;
+  color: #1a67a0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.main-offer {
+  background-color: #f2e49fcc;
+  color: #11854d;
+  font-weight: 700;
+  font-size: 20px;
+  padding: 4px;
+  position: absolute;
+  left: 40.5px;
+  top: 115px;
+  transform: rotate(-10deg);
+  display: inline-block;
+}
+
+.main-banner--reverse .main-offer{
+    left: auto;
+    right: 355px;
+}
+
+.main-banner__image img {
+  max-width: 416px;
+  mix-blend-mode: multiply;
+}

@@ -1,0 +1,99 @@
+{{ 'base.css' | asset_url | stylesheet_tag }}
+  
+  <section class="hero-banner {% if section.settings.reverse_layout %}hero-banner--reverse{% endif %}">
+  
+    <div class="hero-banner__content">
+  
+      {% for block in section.blocks %}
+  
+        {% case block.type %}
+  
+          {% when 'offer' %}
+            <p class="hero-offer">
+              {{ block.settings.offer_text }}
+            </p>
+  
+          {% when 'heading' %}
+            <h1 class="hero-heading">
+              {{ block.settings.heading }}
+            </h1>
+  
+          {% when 'subheading' %}
+            <p class="hero-subheading">
+              {{ block.settings.subheading }}
+            </p>
+  
+        {% endcase %}
+  
+      {% endfor %}
+  
+    </div>
+  
+    <div class="hero-banner__image">
+      <img
+        src="{{ section.settings.banner_image | image_url }}"
+        alt="Banner Image"
+        width=""
+        height="">
+    </div>
+  
+  </section>
+  
+  {% schema %}
+    {
+      "name": "Hero Banner",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "banner_image",
+          "label": "Banner Image"
+        }, {
+          "type": "checkbox",
+          "id": "reverse_layout",
+          "label": "Reverse Layout",
+          "default": false
+        }
+      ],
+      "blocks": [
+        {
+          "type": "offer",
+          "name": "Offer Text",
+          "settings": [
+            {
+              "type": "text",
+              "id": "offer_text",
+              "label": "Offer Text",
+              "default": "UP TO 30% OFF"
+            }
+          ]
+        }, {
+          "type": "heading",
+          "name": "Heading",
+          "settings": [
+            {
+              "type": "text",
+              "id": "heading",
+              "label": "Heading",
+              "default": "MOTHER'S DAY SALE"
+            }
+          ]
+        }, {
+          "type": "subheading",
+          "name": "Subheading",
+          "settings": [
+            {
+              "type": "text",
+              "id": "subheading",
+              "label": "Subheading",
+              "default": "OVER 300,000+ HAPPY CUSTOMERS"
+            }
+          ]
+        }
+      ],
+      "presets": [
+        {
+          "name": "Hero Banner"
+        }
+      ]
+    }
+{% endschema %} 

@@ -1,0 +1,13 @@
+<div class="product-card">
+
+  {{
+    product.featured_image
+    | image_url: width: 500
+    | image_tag
+  }}
+
+  <h3>{{ product.title }}</h3>
+
+  <p>{{ product.price | money }}</p>
+
+</div>

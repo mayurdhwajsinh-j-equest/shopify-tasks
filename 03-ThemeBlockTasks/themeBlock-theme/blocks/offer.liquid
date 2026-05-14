@@ -1,0 +1,17 @@
+<p class="main-offer" {{ block.shopify_attributes }}>
+  {{ block.settings.offer_text }}
+</p>
+
+{% schema %}
+{
+  "name": "Offer Text",
+  "settings": [
+    {
+      "type": "text",
+      "id": "offer_text",
+      "label": "Offer Text",
+      "default": "UP TO 30% OFF"
+    }
+  ]
+}
+{% endschema %}

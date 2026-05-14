@@ -1,0 +1,66 @@
+{{ 'main.css' | asset_url | stylesheet_tag }}
+
+<section class="main-banner {% if section.settings.reverse_layout %}main-banner--reverse{% endif %}">
+
+  <div class="main-banner__content">
+
+    {% content_for 'blocks' %}
+
+  </div>
+
+  <div class="main-banner__image">
+
+    {% if section.settings.banner_image != blank %}
+
+      {{ section.settings.banner_image
+ | image_url: width: 1000
+ | image_tag
+      }}
+
+    {% endif %}
+
+  </div>
+
+</section>
+{% schema %}
+{
+  "name": "Main Banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "banner_image",
+      "label": "Banner Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "reverse_layout",
+      "label": "Reverse Layout",
+      "default": false
+    }
+  ],
+//   "blocks": [
+//     {
+//       "type": "@theme"
+//     }
+//   ],
+"blocks": [
+    {
+      "type": "heading",
+      "name": "Heading"
+    },
+    {
+      "type": "subheading",
+      "name": "Subheading"
+    },
+    {
+      "type": "offer",
+      "name": "Offer Text"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Banner"
+    }
+  ]
+}
+{% endschema %}
