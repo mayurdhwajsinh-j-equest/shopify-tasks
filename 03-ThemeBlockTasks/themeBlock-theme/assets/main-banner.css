@@ -6,8 +6,8 @@
 .main-banner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 40px 100px;
+  justify-content: space-between;
   background: #fef9fa;
   position: relative;
 }
