@@ -1,0 +1,173 @@
+.product-highlight{
+    padding:80px 0;
+    background:#EEF2ED;
+}
+
+.page-width{
+    max-width:1200px;
+    margin:0 auto;
+    padding:0 20px;
+}
+
+.product-highlight__wrapper{
+    display:flex;
+    align-items:center;
+    gap:60px;
+    flex-wrap:wrap;
+}
+
+.product-highlight__content{
+    flex:1;
+    min-width:632px;
+}
+
+.product-highlight__gallery{
+    flex:1;
+    max-width: 632px;
+}
+
+.product-highlight__title{
+    font-size:28px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.product-highlight__rating{
+    color:#E46A74;
+    font-size:20px;
+    margin-bottom:20px;
+}
+
+.product-highlight__description{
+    margin-bottom:30px;
+    font-size: 16px;
+    line-height: 25px;
+    font-weight: 500;
+    color:#404D58;
+}
+
+.product-highlight__field{
+    margin-bottom:20px;
+}
+
+.product-highlight__field label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:600;
+}
+
+.product-highlight__field select{
+    width:40%;
+    padding:12px 16px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:14px;
+    background-color:#fff;
+    cursor:pointer;
+    appearance:none;
+    background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat:no-repeat;
+    background-position:right 10px center;
+    background-size:20px;
+    padding-right:40px;
+}
+
+.quantity-box{
+    display:flex;
+    align-items:center;
+    gap:16px;
+    width:fit-content;
+    background:#f5f5f5;
+    padding:8px 12px;
+    border-radius:8px;
+}
+
+.quantity-box button{
+    width:32px;
+    height:32px;
+    border:none;
+    border-radius:50%;
+    cursor:pointer;
+    background:#fff;
+    font-weight:600;
+    font-size:18px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:all 0.2s ease;
+}
+
+.quantity-box button:hover{
+    background:#e0e0e0;
+}
+
+.quantity-box span{
+    min-width:30px;
+    text-align:center;
+    font-weight:600;
+}
+
+.product-highlight__button{
+    display:block;
+    text-align:center;
+    background:#000;
+    color:#fff;
+    padding:16px 32px;
+    border-radius:999px;
+    text-decoration:none;
+    font-weight:700;
+    margin-top:40px;
+    font-size:16px;
+    transition:all 0.3s ease;
+    border:2px solid #000;
+}
+
+.product-highlight__button:hover{
+    background:#333;
+    border-color:#333;
+}
+
+.product-highlight__main-image img{
+    width:100%;
+    border-radius:20px;
+    display:block;
+}
+
+.product-highlight__thumbnails{
+    display:flex;
+    gap:16px;
+    margin-top:24px;
+    overflow-x:auto;
+    padding-bottom:8px;
+}
+
+.product-highlight__thumb{
+    flex-shrink:0;
+}
+
+.product-highlight__thumb img{
+    width:80px;
+    height:80px;
+    border-radius:12px;
+    display:block;
+    cursor:pointer;
+    border:2px solid transparent;
+    transition:all 0.3s ease;
+    object-fit:cover;
+}
+
+.product-highlight__thumb img:hover{
+    border-color:#000;
+}
+
+@media screen and (max-width:768px){
+
+    .product-highlight__wrapper{
+        flex-direction:column;
+    }
+
+    .product-highlight__title{
+        font-size:32px;
+    }
+
+}
