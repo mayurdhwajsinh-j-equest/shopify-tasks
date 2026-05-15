@@ -1,38 +1,36 @@
 {{ 'base.css' | asset_url | stylesheet_tag }}
 
-<section class="hero-banner {% if section.settings.reverse_layout %}hero-banner--reverse{% endif %}">
+<section class="hero-banner 
+  {% if section.settings.reverse_layout %}hero-banner--reverse{% endif %}
+  {% if section.settings.mobile_reverse_layout %}hero-banner--mobile-reverse{% endif %}">
 
   <div class="hero-banner__content">
 
     {% for block in section.blocks %}
-
       {% case block.type %}
 
         {% when 'offer' %}
-          <p class="hero-offer" 
-           style="color: {{ block.settings.offer_color }};
-               background-color: {{ block.settings.offer_background_color }};
-               font-size: {{ block.settings.offer_size }}px;"
-           >
+          <p class="hero-offer" style="color: {{ block.settings.offer_color }};
+                    background-color: {{ block.settings.offer_background_color }};
+                    font-size: {{ block.settings.offer_size }}px;">
             {{ block.settings.offer_text }}
           </p>
 
         {% when 'heading' %}
           <h1 class="hero-heading" style="color: {{ block.settings.heading_color }}; 
-               font-size: {{ block.settings.heading_size }}px;
-               margin-top: {{ block.settings.margin_top }}px;">
+                     font-size: {{ block.settings.heading_size }}px;
+                     margin-top: {{ block.settings.margin_top }}px;">
             {{ block.settings.heading }}
           </h1>
 
         {% when 'subheading' %}
-          <p class="hero-subheading" style="color: {{  block.settings.subheading_color }};
-               font-size: {{ block.settings.subheading_size }}px;
-               margin-top: {{  block.settings.margin_top }}px;">
+          <p class="hero-subheading" style="color: {{ block.settings.subheading_color }};
+                    font-size: {{ block.settings.subheading_size }}px;
+                    margin-top: {{ block.settings.margin_top }}px;">
             {{ block.settings.subheading }}
           </p>
 
       {% endcase %}
-
     {% endfor %}
 
   </div>
@@ -46,7 +44,6 @@
   </div>
 
 </section>
-
 {% schema %}
   {
     "name": "Hero Banner",
@@ -58,7 +55,12 @@
       }, {
         "type": "checkbox",
         "id": "reverse_layout",
-        "label": "Reverse Layout",
+        "label": "Reverse Layout (Desktop)",
+        "default": false
+      }, {
+        "type": "checkbox",
+        "id": "mobile_reverse_layout",
+        "label": "Reverse Layout (Mobile)",
         "default": false
       }
     ],
@@ -72,20 +74,17 @@
             "id": "offer_text",
             "label": "Offer Text",
             "default": "UP TO 30% OFF"
-          },
-          {
+          }, {
             "type": "color",
             "id": "offer_color",
             "label": "Offer Color",
             "default": "#11854d"
-          },
-          {
+          }, {
             "type": "color",
             "id": "offer_background_color",
             "label": "Offer Background Color",
             "default": "#f2e49fcc"
-          }, 
-          {
+          }, {
             "type": "range",
             "id": "offer_size",
             "label": "Offer Font Size",
@@ -139,8 +138,7 @@
             "id": "subheading",
             "label": "Subheading",
             "default": "OVER 300,000+ HAPPY CUSTOMERS"
-          },
-          {
+          }, {
             "type": "color",
             "id": "subheading_color",
             "label": "Subeading Color",

@@ -16,9 +16,13 @@
   flex-direction: row-reverse;
 }
 
+.hero-banner--reverse .hero-offer {
+  left: auto;
+  right: 355px;
+}
+
 .hero-banner__content {
   max-width: 1280px;
-  /* position: relative; */
 }
 
 .hero-heading {
@@ -48,11 +52,6 @@
   display: inline-block;
 }
 
-.hero-banner--reverse .hero-offer{
-    left: auto;
-    right: 355px;
-}
-
 .hero-banner__image img {
   max-width: 416px;
   mix-blend-mode: multiply;
@@ -60,13 +59,22 @@
 
 @media (max-width: 768px) {
 
+<<<<<<< HEAD
   .hero-banner {
+=======
+  .hero-banner,
+  .hero-banner--reverse {
+>>>>>>> 4b51651 (feature icon and shop by category section added)
     flex-direction: column;
     padding: 20px;
     gap: 10px;
   }
 
+<<<<<<< HEAD
   .hero-banner--reverse {
+=======
+  .hero-banner--mobile-reverse {
+>>>>>>> 4b51651 (feature icon and shop by category section added)
     flex-direction: column-reverse;
   }
 
@@ -77,14 +85,20 @@
   .hero-banner__content {
     text-align: center;
     width: 100%;
+<<<<<<< HEAD
     position: relative;    
     padding-top: 40px;       
+=======
+    position: relative;
+    padding-top: 40px;
+>>>>>>> 4b51651 (feature icon and shop by category section added)
   }
 
   .hero-heading {
     font-size: 36px;
   }
 
+<<<<<<< HEAD
   .hero-offer {
     position: absolute;
     left: 60px;
@@ -100,6 +114,19 @@
     right: auto;
     top: 45px;
     transform: translateX(-50%) rotate(-10deg);
+=======
+  .hero-offer,
+  .hero-banner--reverse .hero-offer,
+  .hero-banner--mobile-reverse .hero-offer {
+    position: absolute;
+    left: 65px;
+    right: auto;
+    top: 42px;
+    transform: translateX(-50%) rotate(-10deg);
+    font-size: 12px;
+    padding: 2px 6px;
+    white-space: nowrap;
+>>>>>>> 4b51651 (feature icon and shop by category section added)
   }
 
 }

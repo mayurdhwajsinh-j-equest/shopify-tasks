@@ -1,0 +1,55 @@
+{{ "feature.css" |  asset_url |  stylesheet_tag}}
+
+<section class="feature-icons">
+    <div class="feature-icon__wrapper">
+        {%  for block in section.blocks %}
+            <div class="feature-icons__item">
+                <div class="feature-icons__icon">
+                    {{
+                        block.settings.icon 
+                        | image_url: width: 100
+                        | image_tag 
+                    }}
+                </div>
+
+                <p class="feature-icons__text">
+                    {{ block.settings.text }}              
+                </p>
+
+            </div>
+        {% endfor %} 
+    </div>
+</section>  
+
+{% schema %}
+{
+  "name": "Feature Icons",
+
+  "blocks": [
+    {
+      "type": "feature",
+      "name": "Feature Item",
+
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Fast Shipping"
+        }
+      ]
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Feature Icons"
+    }
+  ]
+}
+{% endschema %}
